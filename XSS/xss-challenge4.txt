@@ -1,5 +1,5 @@
 #break out of <select> statement
-
+#https://developer.chrome.com/docs/devtools/javascript/ helpful for debugging js code
 #vulnerable JS
 <form id="stockCheckForm" action="/product/stock" method="POST">
                             <input required type="hidden" name="productId" value="2">
