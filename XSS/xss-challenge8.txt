@@ -1,4 +1,4 @@
 #test angular JS in apram by doing {{1+1}} and looking at output
-
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md
 #payload:
-?search={{$on.constructor('alert(1)')()}}
+?search={{$test.constructor('alert(1)')()}}
