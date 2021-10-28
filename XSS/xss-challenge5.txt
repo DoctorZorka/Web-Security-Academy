@@ -1,4 +1,4 @@
-#Take advantage of location.search function to inject img payload into DOM
+#Take advantage of location.search function to inject img payload into DOM with the help of innerHTML
 
 
 
