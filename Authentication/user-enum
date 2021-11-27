@@ -1,0 +1,4 @@
+	- Plug in list of usernames in Intruder
+		○ Repeat for passwords
+	- Look at responses for different sizes or response strings
+  - Find instead of "Invalid Username"--->"Incorrect Password
