@@ -1,0 +1,5 @@
+- Plug in list of usernames in Intruder
+	○ Repeat for passwords
+- Set "Options" in intruder to flag every response with "Invalid username or password."
+- Repeat for Password brute-forcing with "Invalid username or password" (no period)
+Run intruder to find which response is not flagged
