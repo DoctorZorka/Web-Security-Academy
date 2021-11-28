@@ -1,0 +1,8 @@
+	- Log in as a regular user to see resp time
+	- Set pitchfork to use two payloads
+		○ One payload for X-Forwarded-For header to change origin Ips to prevent IP blocking
+		○ One for username/password
+	- Set Password to something long to get a more accurate difference on resp times
+		○ Ex: username=§test§&password=testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	- Once intruder has begun go to Columns > Check Response Received & Response Completed to see response times e.g. the longer the response time means that the user name is very likely registered and the application continues to process the long password given
+  - Find password via length of data
