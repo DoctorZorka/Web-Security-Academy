@@ -1,0 +1,2 @@
+	- Use null byte to bypass ext requirement
+  - image?filename=../../../etc/passwd%00.png
